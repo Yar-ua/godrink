@@ -1,13 +1,8 @@
 Rails.application.routes.draw do
 
-
-  devise_for :users
-  get 'users/show'
-
-  get 'users/edit'
-
   # для гема devise
-#  
+  devise_for :users
+ 
   root 'events#index'
 
   # ресурсы events
@@ -25,6 +20,6 @@ Rails.application.routes.draw do
   end
 
   # ресурс users
-#  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update]
 
 end
