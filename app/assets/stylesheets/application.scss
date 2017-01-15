@@ -1,2 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
+
+
+.field_with_errors input {
+	border-color: red;					/* стиль поля с ошибкой валидации */
+}
+
+.field_with_errors textarea {
+	border-color: red;					/* красный контур поля с ошибкой валидации */
+}

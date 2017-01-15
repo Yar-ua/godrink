@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   # при создании нового юзера (метод create), 
   # перед валидацией объекта выполнить метод set_name
-  before_validation :set_name, on: :create
+  # before_validation :set_name, on: :create
 
   # после коммита обновить подписки
 #  after_commit :link_subscriptions, on: :create
