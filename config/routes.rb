@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :events do
 
     # вложенный ресурс comments
-#  	resources :comments, only: [:create, :destroy]
+  	resources :comments, only: [:create, :destroy]
     # вложенный ресурс subscriptions
 #    resources :subscriptions, only: [:create, :destroy]
     # вложенный ресурс photos

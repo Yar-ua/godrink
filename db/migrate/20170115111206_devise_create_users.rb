@@ -1,3 +1,5 @@
+# миграция сгенерирована rails generate devise User
+
 class DeviseCreateUsers < ActiveRecord::Migration[5.0]
   def change
     create_table :users do |t|
@@ -31,7 +33,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       # t.datetime :locked_at
 
 
-      t.timestamps null: false
+      # t.timestamps null: false
     end
 
     add_index :users, :email,                unique: true
