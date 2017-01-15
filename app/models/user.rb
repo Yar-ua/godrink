@@ -19,7 +19,7 @@ class User < ApplicationRecord
   before_validation :set_name, on: :create
 
   # после коммита обновить подписки
-  after_commit :link_subscriptions, on: :create
+#  after_commit :link_subscriptions, on: :create
 
   # Добавляем аплоадер аватарок, чтобы заработал carrierwave
   # mount_uploader :avatar, AvatarUploader
