@@ -1,0 +1,17 @@
+<div class="buffer-bottom">
+  <p><%= comment.body %></p>
+  <span>
+  	<% if comment.user.present? %>
+  	  <%= render partial: 'users/user', object: comment.user %>
+  	<% else %>
+  	  <em><strong><%= comment.user.name %></strong></em>
+  	<% end %>
+  </span>
+
+  	<em><%= l comment.created_at, format: :short %></em>
+  	<% if current_user_can_edit?(comment) %>
+  	  <%= link_to 'Удалить коммент' event_comment_path(comment.event, comment),
+  	  		method: :delete, data: {comfirm: 'уверен что хочешь удалить комментарий?'} %>
+  	<% end %>
+  </p>
+</div>
