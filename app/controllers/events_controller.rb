@@ -35,6 +35,8 @@ class EventsController < ApplicationController
 
 
   def show
+  # заготовка модели для добавления формы комментария
+  @new_comment = @event.comments.build(params[:comment])
 
   end
 
