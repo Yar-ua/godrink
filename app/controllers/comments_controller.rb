@@ -21,6 +21,14 @@ class CommentsController < ApplicationController
 
 
   def destroy
+    message = {notice: 'Комментарий удален'}
+
+    if current_user_can_edit?(@comment)
+      @comment.destroy!
+    else
+      message = {alert: I18n.t('controllers.comment.error')}
+    end
+    redirect_to @event, message
   end
 
 
