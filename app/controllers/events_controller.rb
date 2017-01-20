@@ -3,6 +3,9 @@ class EventsController < ApplicationController
   # проверить залогинен ли юзер, исключение - просмотр существующих евентов
   before_action :authenticate_user!, except: [:show, :index]
 
+  # задаем объект @event для экшена show
+  before_action :set_event, only: [:show]
+
   
   # GET /events
   def index
@@ -28,9 +31,9 @@ class EventsController < ApplicationController
   end
 
 
-  #def show
+  def show
 
-  #end
+  end
 
 
 
@@ -39,6 +42,11 @@ class EventsController < ApplicationController
 
   def event_params
   	params.require(:event).permit(:title, :address, :datetime, :description) # , :pincode)
+  end
+
+
+  def set_event
+  	@event = Event.find(params[:id])
   end
 
 
