@@ -22,7 +22,7 @@ class User < ApplicationRecord
 #  after_commit :link_subscriptions, on: :create
 
   # Добавляем аплоадер аватарок, чтобы заработал carrierwave
-  # mount_uploader :avatar, AvatarUploader
+  mount_uploader :avatar, AvatarUploader
 
   private
 
