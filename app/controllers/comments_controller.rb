@@ -7,6 +7,16 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:destroy]
 
   def create
+    @new_comment = @event.comments.build(comment_params)
+    @new_comment.user = current_user
+    if @new_comment.save
+      # уведомляем подписчиков о новом комментарии
+      # notify_subscribers(@event, @new_comment)
+
+      redirect_to @event, notice: 'Комментарий добавлен'
+    else
+      render 'event/show', alert: I18n.t('controllers.comments.error')
+    end
   end
 
 
@@ -26,6 +36,11 @@ class CommentsController < ApplicationController
 
   def set_comment
   	@comment = @event.comments.find(params[:id])
+  end
+
+
+  def comment_params
+    params.require(:comment).permit(:body, :user_name)
   end
 
 
