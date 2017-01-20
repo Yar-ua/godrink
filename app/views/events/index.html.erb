@@ -3,7 +3,7 @@
 <div class="buffer-both">
   <%= link_to 'Создать событие', new_event_path, class: 'btn btn-success' %>
 </div>
-
+<hr/>
 <div class="row buffer-bottom">
   <!-- рендерим сразу все события, каждое в партиале 'events/event' -->
   <%= render partial: 'events/event', collection: @events %>

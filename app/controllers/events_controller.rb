@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   
   # GET /events
   def index
-  	@event = Event.all
+  	@events = Event.all
   end
 
 
@@ -14,6 +14,7 @@ class EventsController < ApplicationController
   def new
   	@event = current_user.events.build
   end
+
 
   # POST /evebts
   def create
@@ -25,6 +26,11 @@ class EventsController < ApplicationController
   	  render :new
   	end
   end
+
+
+  #def show
+
+  #end
 
 
 

@@ -7,6 +7,12 @@ class UsersController < ApplicationController
   before_action :set_current_user, except: [:show]
 
 
+  # GET /events
+  def index
+    @events = Event.all
+  end
+
+
   # GET /users/1/
   def show
   	@user = User.find(params[:id])
