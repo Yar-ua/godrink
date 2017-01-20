@@ -4,8 +4,7 @@
   	<div class="col-md-12">
   	  
 
-
-     <div class="event-info-inner row">
+      <div class="event-info-inner row">
      	<div class="col-md-6">
 
      	  <div class="event-description">
@@ -22,13 +21,13 @@
      	  <% if current_user_can_edit?(@event) %>
      	    <div class="buffer-both">
      	      <%= link_to 'Изменить', edit_event_path(@event), class: "btn btn-primary" %>
+     	         	  
+     	      <%= link_to 'Удалить', event_path(@event), class: "btn btn-danger", method: :delete, data: {confirm: 'Уверен что хочешь удалить встречу?'} %>
      	    </div>
      	  <% end %>
 
      	</div>
-
-
-     </div>
+      </div>
 
   	</div>
   </div>

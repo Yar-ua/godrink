@@ -6,6 +6,9 @@ class EventsController < ApplicationController
   # задаем объект @event для экшена show
   before_action :set_event, only: [:show]
 
+  # задаем объект @event для текущего пользователя
+  before_action :set_current_user_event, only: [:edit, :update, :destroy]
+
   
   # GET /events
   def index
@@ -36,6 +39,28 @@ class EventsController < ApplicationController
   end
 
 
+  # GET /events/1/edit
+  def edit
+  
+  end
+
+  
+  # PATCH/PUT /events/1
+  def update
+  	if @event.update(event_params)
+  	  redirect_to @event, notice: 'Информация о событии была обновлена'
+  	else
+  	  render 'edit'
+  	end
+  end
+
+
+  # DELETE /events/1
+  def destroy
+  	@event.destroy
+  	redirect_to events_path, notice: 'Событие было удалено'
+  end
+
 
 
   protected
@@ -47,6 +72,11 @@ class EventsController < ApplicationController
 
   def set_event
   	@event = Event.find(params[:id])
+  end
+
+
+  def set_current_user_event
+  	@event = current_user.events.find(params[:id])
   end
 
 
