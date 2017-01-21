@@ -1,0 +1,7 @@
+<%= form_for [@event, subscription] do |f| %>
+  <%= render partial: 'partials/form_errors', locals: {model: subscription} %>
+
+  <div class="actions">
+    <%= f.submit 'Подписаться', class: "btn btn-primary" %>
+  </div>
+<% end %>

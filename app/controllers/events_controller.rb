@@ -38,6 +38,9 @@ class EventsController < ApplicationController
   # заготовка модели для добавления формы комментария
   @new_comment = @event.comments.build(params[:comment])
 
+  # Заготовка модели для формы подписки
+  @new_subscription = @event.subscriptions.build(params[:subscription])
+
   end
 
 
