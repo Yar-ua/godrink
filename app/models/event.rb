@@ -5,6 +5,11 @@ class Event < ApplicationRecord
 
   # событие имеет много комментариев и подписок
   has_many :comments, dependent: :destroy
+  has_many :subscriptions, dependent: :destroy
+
+  # у события много подписчиков (объекты User), 
+  # через таблицу subscriptions, по ключу user_id
+  has_many :subscribers, through: :subscriptions, source: :user
 
   # проверка, событие создает юзер. юзера не может не быть
   validates :user, presence: true

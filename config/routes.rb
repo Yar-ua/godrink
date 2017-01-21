@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     # вложенный ресурс comments
   	resources :comments, only: [:create, :destroy]
     # вложенный ресурс subscriptions
-#    resources :subscriptions, only: [:create, :destroy]
+    resources :subscriptions, only: [:create, :destroy]
     # вложенный ресурс photos
 #    resources :photos, only: [:create, :destroy]
 

@@ -10,6 +10,10 @@ class User < ApplicationRecord
 
   # юзер может создавать много событий
   has_many :events, dependent: :destroy
+  # юзер может иметь много камментов
+  has_many :comments, dependent: :destroy
+  # юзер может иметь много подписок
+  has_many :subscriptions, dependent: :destroy
 
   # имя юзера должно быть, и не длиннее 30 букв
   validates :name, presence: true, length: {maximum: 30}
@@ -22,7 +26,7 @@ class User < ApplicationRecord
 #  after_commit :link_subscriptions, on: :create
 
   # Добавляем аплоадер аватарок, чтобы заработал carrierwave
-  mount_uploader :avatar, AvatarUploader
+  # mount_uploader :avatar, AvatarUploader
 
   private
 
