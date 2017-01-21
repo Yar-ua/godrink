@@ -6,7 +6,8 @@
   <% end %>
 
   <% if current_user_can_edit?(subscription) %>
-    <%= link_to 'Отписаться', event_subscription_path(subscription.event, subscription),
+    <%= link_to fa_icon('window-close-o'), 
+    event_subscription_path(subscription.event, subscription),
     method: :delete, data: {confirm: 'Уверен что хочешь отписаться?'} %>
   <% end %>
 </span>

@@ -11,7 +11,7 @@ class Subscription < ApplicationRecord
   #			format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/, unless: 'user.present?'
 
   # для данного event_id один юзер может подписаться только один раз
-  validates :user, uniqueness: {scope: :event_id}, if: 'user.resent?'
+  validates :user, uniqueness: {scope: :event_id}, if: 'user.present?'
 
   # переопределяем метод, если есть юзер, выдаем его имя,
   # если нет -- дергаем исходный переопределенный метод

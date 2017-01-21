@@ -9,6 +9,14 @@ class ApplicationController < ActionController::Base
   helper_method :current_user_can_edit?
 
 
+
+  # хелпер для иконок font-awesome
+  def fa_icon
+    content_tag 'span', '', class: "fa fa-#{icon_class}"
+  end
+
+
+
   protected
 
   def configure_permitted_parameters
