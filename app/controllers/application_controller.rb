@@ -10,13 +10,6 @@ class ApplicationController < ActionController::Base
 
 
 
-  # хелпер для иконок font-awesome
-  def fa_icon
-    content_tag 'span', '', class: "fa fa-#{icon_class}"
-  end
-
-
-
   protected
 
   def configure_permitted_parameters

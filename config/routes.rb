@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     # вложенный ресурс subscriptions
     resources :subscriptions, only: [:create, :destroy]
     # вложенный ресурс photos
-#    resources :photos, only: [:create, :destroy]
+    resources :photos, only: [:create, :destroy]
 
 #    post :show, on: :member
 
