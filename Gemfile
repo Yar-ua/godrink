@@ -38,7 +38,7 @@ gem 'devise-i18n'
 gem 'russian'
 # гем, интегрирующий bootstrap
 gem 'bootstrap-sass'
-# гем для загрузки картинок
+# гем для загрузки картинок и аватарок
 gem 'carrierwave'
 # гем для обработки картинок
 gem 'rmagick'
