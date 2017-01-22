@@ -4,11 +4,11 @@
   <div class="col-md-6 buffer-top">
     <%= render 'form' %>
 
-    <hr/>
+    <br/>
 
     <% if current_user_can_edit?(@event) %>
       <div class="buffer-both">
-        <%= link_to 'Удалить событие', event_path(@event), method: :delete, class: "btn btn-danger" %>
+        <%= link_to 'Удалить событие', event_path(@event), method: :delete, class: "btn btn-danger", data: {confirm: 'Уверен что хочешь удалить встречу?'} %>
       </div>
     <% end %>
   
