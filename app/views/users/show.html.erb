@@ -1,7 +1,7 @@
 <div class="text-center">
   <h1><%= @user.name %> </h1>
   
-  <%= image_tag "avatar-default.jpg" %>
+  <%= image_tag user_avatar(@user) %>
   <hr/>
 
   <%# если это текущий пользователь то ему доступна ссылка "редактировать" %>
