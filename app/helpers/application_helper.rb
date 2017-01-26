@@ -6,7 +6,8 @@ module ApplicationHelper
     content_tag 'span', '', class: "fa fa-#{icon_class}"
   end
 
-  # задаем аватар по умолчанию
+  # задаем аватар по умолчанию. если юзер имеет аватару - то возвращаем ее
+  # иначе - возвращаем стандартную аватару
   def user_avatar(user)
   	if user.avatar?
   	  user.avatar.url

@@ -19,4 +19,11 @@ class Event < ApplicationRecord
   validates :address, presence: true
   validates :datetime, presence: true
 
+
+  # получаем список участников события
+  # всех подписавшихся + организатора(создателя)
+  def visitors
+    (subscribers + [user]).uniq
+  end
+
 end
