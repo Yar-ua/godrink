@@ -41,16 +41,21 @@
       </div>
 
 
-      <footer>
-      <%# Для вывода названия компании используем хелпер I18n.t %>
-        <p>&copy; Developed for TKM's drinkers 2017</p>
-      </footer>
-
       <hr/>
       <%= debug(params) if Rails.env.development? %> 
 
     </div>
 
+
+    <footer>
+      <div class="navbar-fixed-bottom row-fluid">
+        <div class="navbar-inner">
+          <div class="container">
+            <p>&copy; Developed for TKM's drinkers 2017</p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
   </body>
 </html>
