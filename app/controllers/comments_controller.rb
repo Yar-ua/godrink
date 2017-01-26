@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
 
       redirect_to @event, notice: 'Комментарий добавлен'
     else
-      render 'event/show', alert: I18n.t('controllers.comments.error')
+      render 'events/show', alert: I18n.t('controllers.comments.error')
     end
   end
 
