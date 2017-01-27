@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     # вложенный ресурс photos
     resources :photos, only: [:create, :destroy]
 
-#    post :show, on: :member
+    post :show, on: :member
 
   end
 
