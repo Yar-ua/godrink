@@ -7,7 +7,7 @@
       <div class="event-info-inner row">
      	<div class="col-md-6">
 
-     	  <div class="event-description">
+     	  <div class="event-description-show">
      	  	<h1><%= @event.title %></h1>
      	  	<%# для перевода даты в русский формат используем гем I18n %>
      	  	<%# формат при этом используется из гема russian %>
@@ -43,6 +43,7 @@
           <%= render partial: 'comments/form', 
                   locals: {comment: @new_comment || @event.comments.build} %>
         <% end %>
+        <hr/>
         <div>
           <%= render partial: 'comments/comment', collection: @event.comments.except(@new_comment) %>
         </div>

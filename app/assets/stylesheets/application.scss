@@ -1,3 +1,11 @@
+/*
+*= require_tree .
+*= require_self
+*= require events
+*= requier users
+*/
+
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
@@ -11,11 +19,6 @@
 	border-color: red;					/* красный контур поля с ошибкой валидации */
 }
 
-/* навбар стиль */
-/* .navbar {
-	background-color: yellow;
-}
-*/
 
 .buffer-top {
 	margin-top: 20px;
@@ -30,8 +33,29 @@
 	margin-bottom: 20px;
 }
 
-.event-background {
-    /*background-color: yellow;*/
-	background-image: url(background_event.jpg); 
-	background-size: contain;
+/* Avatars for users & events */
+/* .img-icon, .img-icon-small {
+    height: 50px;
+    width: auto;
+    border-radius: 50%;
+} */
+
+/* Thumbnails for events/index */
+.thumbnail {
+    position: relative;
+    background: transparent;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.thumbnail h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 0;
+    margin-bottom: .3em;
+}
+
+.thumbnail-inner {
+    padding: 20px 4px 4px;
 }
