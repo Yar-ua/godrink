@@ -8,7 +8,7 @@
      	<div class="col-md-6">
 
      	  <div class="event-description-show">
-     	  	<h1><%= @event.title %></h1>
+     	  	<h1 class="event-title"><%= @event.title %></h1>
      	  	<%# для перевода даты в русский формат используем гем I18n %>
      	  	<%# формат при этом используется из гема russian %>
      	  	<h3><%= l @event.datetime, format: :short %></h3>
