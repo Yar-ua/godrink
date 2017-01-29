@@ -31,15 +31,30 @@
 
   	</div>
   </div>
-
-
+  
+  <br/>
 
   <div class="row">
 
     <div class="col-md-8">
 
+
+    <div id="demoLightbox" class="lightbox hide fade"  tabindex="-1" role="dialog" aria-hidden="true">
+      <div class='lightbox-content'>+
+        <img src="image.png">
+        <div class="lightbox-caption"><p>Your caption here</p></div>
+      </div>
+    </div>
+
+
+
+
       <div class="event-photos">
         <%# кнопка вывода формы добавления фотографии %>
+        <div class="event-photos-gallery">
+          <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
+        </div>
+
         <div class="buffer-both">
           <%#= link_to 'Добавить фотку', '#', class: "event-photo-form-link" %>
           <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
@@ -91,6 +106,3 @@
   </div>
 
 </div>
-
----
-<%= @new_photo.inspect %>
