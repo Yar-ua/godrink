@@ -41,6 +41,9 @@ class EventsController < ApplicationController
   # Заготовка модели для формы подписки
   @new_subscription = @event.subscriptions.build(params[:subscription])
 
+  # Заготовки для загрузки фото
+  @new_photo = @event.photos.build(params[:photo])
+
   end
 
 

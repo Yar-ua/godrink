@@ -4,8 +4,8 @@ class Photo < ApplicationRecord
   belongs_to :event
 
   # фото загрузил какой то юзер
-  # связь выключена, если юзера удалить то фото должно все равно остаться
-  # belongs_to :user
+  # фото добавил какой то юзер
+  belongs_to :user
 
   # у фотографии всегда есть юзер и эвент
   validates :user, presence: true
