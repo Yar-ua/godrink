@@ -5,28 +5,28 @@
   	  
 
       <div class="event-info-inner row">
-     	<div class="col-md-6">
+       	<div class="col-md-6">
 
-     	  <div class="event-description-show">
-     	  	<h1 class="event-title"><%= @event.title %></h1>
-     	  	<%# для перевода даты в русский формат используем гем I18n %>
-     	  	<%# формат при этом используется из гема russian %>
-     	  	<h3><%= l @event.datetime, format: :short %></h3>
-     	  	<h3>
-     	  	  <small><%= @event.address %></small>
-     	  	</h3>
-     	  	<p><%= @event.description %></p>
-     	  </div>
+       	  <div class="event-description-show">
+       	  	<h1 class="event-title"><%= @event.title %></h1>
+       	  	<%# для перевода даты в русский формат используем гем I18n %>
+       	  	<%# формат при этом используется из гема russian %>
+       	  	<h3><%= l @event.datetime, format: :short %></h3>
+       	  	<h3>
+       	  	  <small><%= @event.address %></small>
+       	  	</h3>
+       	  	<p><%= @event.description %></p>
+       	  </div>
 
-     	  <% if current_user_can_edit?(@event) %>
-     	    <div class="buffer-both">
-     	      <%= link_to 'Изменить', edit_event_path(@event), class: "btn btn-primary" %>
-     	         	  
-     	      <%#= link_to 'Удалить', event_path(@event), class: "btn btn-danger", method: :delete, data: {confirm: 'Уверен что хочешь удалить встречу?'} %>
-     	    </div>
-     	  <% end %>
+       	  <% if current_user_can_edit?(@event) %>
+       	    <div class="buffer-both">
+       	      <%= link_to 'Изменить', edit_event_path(@event), class: "btn btn-primary" %>
+       	         	  
+       	      <%#= link_to 'Удалить', event_path(@event), class: "btn btn-danger", method: :delete, data: {confirm: 'Уверен что хочешь удалить встречу?'} %>
+       	    </div>
+       	  <% end %>
 
-     	</div>
+       	</div>
       </div>
 
   	</div>
@@ -37,6 +37,14 @@
   <div class="row">
 
     <div class="col-md-8">
+
+      <div class="event-photos">
+        <%# кнопка вывода формы добавления фотографии %>
+        <div class="buffer-both">
+          <%#= link_to 'Добавить фотку', '#', class: "event-photo-form-link" %>
+          <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
+        </div>
+      </div>
 
       <div class="event-comments buffer-top">
         <% if current_user %>
