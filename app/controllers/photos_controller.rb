@@ -24,6 +24,22 @@ class PhotosController < ApplicationController
   end
 
 
+  # действие удаления фотографии
+  def destroy
+    message = {notice: 'фото удалено'}
+
+    # проерка - может ли юзер удалить фото
+    # если может - удаляем, если нет - меняем сообщение
+    if current_user_can_edit?(@photo)
+      @photo.destroy
+    else
+      message = {alert: 'по каким то причинам фото не удалено'}
+    end
+
+    redirect_to @event, message
+  end
+
+
 
   private
 

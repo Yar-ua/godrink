@@ -3,7 +3,7 @@
 <% if current_user_can_edit?(photo) %>
   <% image_title += link_to(
     fa_icon('trash'), event_photo_path(photo.event, photo),
-    method: :delete, data: {confirm: t('.destroy_confirm')}
+    method: :delete, data: {confirm: 'уверен что хочешь удалить фото?'}
   ) %>
 <% end %>
 
