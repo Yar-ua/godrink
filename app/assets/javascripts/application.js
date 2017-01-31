@@ -24,7 +24,8 @@ $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
 });
 
 // Скрываем форму добавления фотографии и показываем её по клику на ссылку
-$(function(){
+// ++! требуется доработка
+/* $(function(){
   $('.event-photo-form').hide();
 
   $('.event-photo-form-link').click(function(){
@@ -32,3 +33,4 @@ $(function(){
     return false;
   });
 });
+*/
