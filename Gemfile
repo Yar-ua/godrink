@@ -45,7 +45,10 @@ gem 'rmagick'
 # гем для работы carrierwave с хранилищем Amazon S3
 gem 'fog-aws'
 gem 'thor', '0.19.1'
+# гем для иконок
 gem 'font-awesome-rails'
+# гем для lightbox-bootstrap отображения картинок
+# gem 'lightbox-bootstrap-rails'
 
 
 group :development, :test do

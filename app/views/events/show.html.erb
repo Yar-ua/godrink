@@ -37,18 +37,6 @@
   <div class="row">
 
     <div class="col-md-8">
-
-
-    <div id="demoLightbox" class="lightbox hide fade"  tabindex="-1" role="dialog" aria-hidden="true">
-      <div class='lightbox-content'>+
-        <img src="image.png">
-        <div class="lightbox-caption"><p>Your caption here</p></div>
-      </div>
-    </div>
-
-
-
-
       <div class="event-photos">
         <%# кнопка вывода формы добавления фотографии %>
         <div class="event-photos-gallery">
@@ -61,6 +49,12 @@
         </div>
       </div>
 
+      <%# Кнопка вывода формы добавления фотографии %>
+      <div class="buffer-both">
+        <%= link_to "Добавить фотку", '#', class: 'event-photo-form-link' %>
+      </div>
+      
+      <%# Рисуем форму для добавления новой фотографии (которая будет скрыта с помощью js) %>
       <div class="event-comments buffer-top">
         <% if current_user %>
           <%= render partial: 'comments/form', 
