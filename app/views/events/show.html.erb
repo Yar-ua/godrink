@@ -46,9 +46,9 @@
           <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
         </div>
         <%# кнопка вывода формы добавления фотографии %>
-        <!-- <div class="buffer-both">
-          <%#= link_to "Добавить фотку", '#', class: 'event-photo-form-link' %>
-        </div> -->
+        <div class="buffer-both">
+          <%= link_to "Добавить фотку", '#', class: 'event-photo-form-link' %>
+        </div>
 
         <div class="event-photo-form">
           <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
@@ -102,10 +102,21 @@
 
 </div>
 
-
+ 
 <script>
+/* подключение ekko-lightbox */
   $(document).on('click', '[data-toggle="lightbox"]', function(event) {
     event.preventDefault();
     $(this).ekkoLightbox();
+  }); 
+
+/* показываем/скрываем форму загрузки для фотографий */
+  $(function(){
+  $('.event-photo-form').hide();
+
+  $('.event-photo-form-link').click(function(){
+    $('.event-photo-form').slideToggle(300);
+    return false;
   });
+});
 </script>
