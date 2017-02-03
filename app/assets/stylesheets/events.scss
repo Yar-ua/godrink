@@ -4,6 +4,15 @@
 
 
 /* чтиль страницы event#index; */
+
+ .event-info {
+  position: relative;
+  color: white;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+
 .event-background {
   position: absolute;
   width: 100%;
@@ -32,7 +41,6 @@
 
 .event-title {
 	color: #ffca00;	
-
 }
 
 .event-date {
@@ -45,7 +53,6 @@
 	margin-bottom: 20px;
 }
 
-
 .event-description-show * {
   color: white;
 }
@@ -57,6 +64,3 @@
 .event-description-show small {
   color: #e0e0e0;
 }
-
-
-

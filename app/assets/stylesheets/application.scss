@@ -19,7 +19,6 @@
 	border-color: red;					/* красный контур поля с ошибкой валидации */
 }
 
-
 .buffer-top {
 	margin-top: 20px;
 }
@@ -33,3 +32,13 @@
 	margin-bottom: 20px;
 }
 
+
+/* Thumbnails, стиль-показ случайныая картинка фона для event#index
+само получение картинки определено в events/event и application_helper  */
+.thumbnail {
+    position: relative;
+    background: transparent;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 5px;
+}
