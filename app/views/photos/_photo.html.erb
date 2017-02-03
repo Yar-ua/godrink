@@ -8,7 +8,6 @@
 <% end %>
 
 <span class="event-photo">
-  <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url, data: {
-    toggle: 'lightbox', title: image_title, gallery: 'event-photos'
-  } %>
+  <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url, 
+  data: {toggle: 'lightbox', title: image_title, gallery: 'event-photos'} %>
 </span>
