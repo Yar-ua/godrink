@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  match 'about', to: 'static_pages#about', via: [:get]
+
   # для гема devise
   devise_for :users
  
