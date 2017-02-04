@@ -63,7 +63,7 @@
         <% end %>
         <hr/>
         <div>
-          <%= render partial: 'comments/comment', collection: @event.comments.except(@new_comment).order('created_at DESC') %>
+          <%= render partial: 'comments/comment', collection: @comments_event_collection %>
         </div>
       </div>
 

@@ -9,6 +9,9 @@ class EventsController < ApplicationController
   # задаем объект @event для текущего пользователя
   before_action :set_current_user_event, only: [:edit, :update, :destroy]
 
+  # задаем коллекцию камментов для партиала
+  before_action :set_comments_event_collection, only: [:show]
+
   
   # GET /events
   def index
@@ -85,6 +88,13 @@ class EventsController < ApplicationController
 
   def set_current_user_event
   	@event = current_user.events.find(params[:id])
+  end
+
+  # получаем коллекцию камментов для партиала
+  def set_comments_event_collection
+    @comments_event_collection = @event.comments.except(@new_comment).order('created_at DESC')
+    # @event.comments.except(@new_comment).order('created_at DESC')
+    # .paginate(page: params[:page], per_page: 5)
   end
 
 
