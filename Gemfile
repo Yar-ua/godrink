@@ -49,6 +49,8 @@ gem 'thor', '0.19.1'
 gem 'font-awesome-rails'
 # гем для lightbox-bootstrap отображения картинок
 # gem 'lightbox-bootstrap-rails'
+# гем для пагинации
+gem 'will_paginate'
 
 
 group :development, :test do
