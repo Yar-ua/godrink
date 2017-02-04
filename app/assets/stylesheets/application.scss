@@ -10,6 +10,12 @@
 @import "font-awesome";
 
 
+.navbar-brand-image {
+	height: 40px;
+	margin-top: -10px;
+}
+
+
 
 .field_with_errors input {
 	border-color: red;					/* стиль поля с ошибкой валидации */
@@ -42,3 +48,5 @@
     overflow: hidden;
     border-radius: 5px;
 }
+
+
