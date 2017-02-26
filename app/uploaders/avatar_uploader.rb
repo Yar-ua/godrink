@@ -6,15 +6,9 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-
-  # храним аватар как файл в папке приложения в девелопмент 
-  # и в облаке если в что в продакшен
-  if Rails.env.production?
-    storage :fog
-  else
+  # storage :fog
     storage :file
-  end
-  
+    
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   # папка для хранения файлов аватарок
