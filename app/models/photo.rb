@@ -11,6 +11,8 @@ class Photo < ApplicationRecord
   validates :user, presence: true
   validates :event, presence: true
 
+  validates :photo, presence: { message: 'Фото не загружено' }
+
   # Добавляем аплоадер фотографий, чтобы заработал carrierwave
   mount_uploader :photo, PhotoUploader
 

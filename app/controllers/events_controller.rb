@@ -10,7 +10,7 @@ class EventsController < ApplicationController
   before_action :set_current_user_event, only: [:edit, :update, :destroy]
 
   # задаем коллекцию камментов для партиала
-  before_action :set_comments_event_collection, only: [:show]
+  before_action :set_comments_event_collection #, only: [:show]
 
   
   # GET /events

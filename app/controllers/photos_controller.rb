@@ -19,7 +19,8 @@ class PhotosController < ApplicationController
   	if @new_photo.save
   	  redirect_to @event, notice: 'Фото загружено'
   	else
-  	  render 'events/show', alert: I18n.t('controllers.photos.error')
+  	  # render 'events/show', alert: I18n.t('controllers.photos.error')
+      redirect_to event_path(@event), alert: 'Фото не загружено'
   	end
   end
 
