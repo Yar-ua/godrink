@@ -51,6 +51,8 @@ gem 'font-awesome-rails'
 # gem 'lightbox-bootstrap-rails'
 # гем для пагинации
 gem 'will_paginate'
+# гем для лайтбокс-рельс
+gem 'lightbox2-rails'
 
 
 group :development, :test do

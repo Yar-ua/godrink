@@ -111,13 +111,21 @@
 
  
 <script>
-/* показываем/скрываем форму загрузки для фотографий */
-  $(function(){
-  $('.event-photo-form').hide();
+  /* показываем/скрываем форму загрузки для фотографий */
+    $(function(){
+    $('.event-photo-form').hide();
 
-  $('.event-photo-form-link').click(function(){
-    $('.event-photo-form').slideToggle(300);
-    return false;
+    $('.event-photo-form-link').click(function(){
+      $('.event-photo-form').slideToggle(300);
+      return false;
+    });
   });
-});
+
+
+  /* опции lightbox */
+  /* см. перечень опций настройки на http://lokeshdhakar.com/projects/lightbox2/#examples */
+  lightbox.option ({
+    'resizeDuration': 200,
+    'wrapAround': true
+  })
 </script>
