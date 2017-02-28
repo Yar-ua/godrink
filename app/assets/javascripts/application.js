@@ -16,8 +16,3 @@
 //= require turbolinks
 //= require_tree .
 
-/* подключение ekko-lightbox */
-  $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-    event.preventDefault();
-    $(this).ekkoLightbox();
-  }); 
