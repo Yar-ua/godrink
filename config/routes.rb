@@ -7,6 +7,10 @@ Rails.application.routes.draw do
  
   root 'events#index'
 
+  # фикс для удаления фото: перенаправляем get запрос в метод destroy
+  get '/events/:event_id/photos/:id' => 'photos#destroy'
+
+
   # ресурсы events
   resources :events do
 

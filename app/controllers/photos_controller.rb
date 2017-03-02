@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
   # для каждого действия надо получить событие, к которому привязана данная фотография
-  before_action :set_event, only: [:create, :destroy]
+  before_action :set_event #, only: [:create, :destroy]
 
   # для каждого действия destroy надо получить саму фотографию из БД
   before_action :set_photo, only: [:destroy]
