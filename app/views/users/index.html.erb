@@ -1,17 +1,4 @@
 <h1>Просмотр зарегистрированных пользователей:</h1>
 <hr/>
 
-<div class="row">
-  <%= render partial: 'users/user_index', collection: @users, :as => :user %>
-</div>
-
-
-<% @users.each do |user| %>
-  <%= user.name %><br/>
-  <%= user.email %><br/>
-  <%= user.current_sign_in_at %><br/>
-  <%= user.last_sign_in_at %><br/>
-  <%= user.current_sign_in_ip %><br/>
-  <%= user.last_sign_in_ip %>
-  <hr/>
-<% end %>
+<%= render partial: 'users/user_index', collection: @users, :as => :user %>
