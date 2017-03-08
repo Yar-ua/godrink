@@ -43,7 +43,7 @@ gem 'carrierwave'
 # гем для обработки картинок
 gem 'rmagick'
 # гем для работы carrierwave с хранилищем Amazon S3
-gem 'fog-aws'
+# gem 'fog-aws'
 gem 'thor', '0.19.1'
 # гем для иконок
 gem 'font-awesome-rails'
@@ -79,3 +79,10 @@ group :production do
   gem 'rails_12factor'
 end
 
+# гем для админки
+gem 'activeadmin', '~> 1.0.0.pre5'
+# gem 'activeadmin'
+# и сопутствующие гемы 
+# gem 'cancan' # or cancancan
+# gem 'draper'
+# gem 'pundit'
