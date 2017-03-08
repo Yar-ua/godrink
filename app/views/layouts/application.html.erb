@@ -3,16 +3,11 @@
   <head>
     <title>GoDrinK</title>
     
-    <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "application", media: 'all', 'data-turbolinks-track': 'reload' %>
     
     <%= favicon_link_tag 'favicon1.png' %>
-
-    <!-- подключение lightbox2-rails -->
-    <%= javascript_include_tag 'lightbox' %>
-    <%= stylesheet_link_tag 'lightbox', :media => "all" %>
-
    
   </head>
 
@@ -42,6 +37,8 @@
     </div>
 
 
+
+
     <footer>
       <div class="navbar-fixed-bottom row-fluid">
         <div class="navbar-inner">
@@ -51,8 +48,6 @@
         </div>
       </div>
     </footer>
-
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   
   </body>
 </html>
