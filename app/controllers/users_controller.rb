@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   # GET /events
   def index
     @events = Event.all
+    @users = User.all
   end
 
 

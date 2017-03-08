@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   # для гема devise
   devise_for :users
+  resources :users, only: [:index, :show]
  
   root 'events#index'
 
