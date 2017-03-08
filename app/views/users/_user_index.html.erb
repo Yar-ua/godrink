@@ -7,12 +7,18 @@
       <div class="col-md-2">
         <%= image_tag(user_avatar(user), class: 'img-icon img-circle', width: "100px") %>
       </div>
-      <div>
+      <div class="col-md-5">
         Эл. почта:: <%= user.email %><br>
         Последний раз логинился: <%= user.current_sign_in_at %><br/>
         IP при последнем входе в систему: <%= user.current_sign_in_ip %><br/>
-        Зарегистрировался: <%= user.last_sign_in_at %><br/>
-        IP при регистрации: <%= user.last_sign_in_ip %>
+        Зарегистрировался: <%= user.created_at %><br/>
+        Последнее обновление профиля: <%= user.updated_at %>
+      </div>
+      <div>
+        Создано тем: <%= user.events.count %><br/>
+        Написано комментариев: <%= user.comments.count %><br/>
+        Загружено картинок: <%= user.photos.count %><br/>
+        <small>подробнее см. профиль</small>
       </div>
     </div>
   </div>

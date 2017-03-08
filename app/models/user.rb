@@ -16,8 +16,9 @@ class User < ApplicationRecord
   # юзер может иметь много подписок
   has_many :subscriptions, dependent: :destroy
 
-  # связь выключена, если юзера удалить то фото должно все равно остаться
-  # has_many :photos
+  # связь dependent: :destroy выключена, 
+  # если юзера удалить то фото должно все равно остаться
+  has_many :photos
 
   # имя юзера должно быть, и не длиннее 30 букв
   validates :name, presence: true, length: {maximum: 30}
