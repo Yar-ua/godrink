@@ -1,1 +1,8 @@
 <h1>Index users page </h1>
+<hr/>
+
+<% @users.each do |user| %>
+  <%= user.name %><br/>
+  <%= user.email %><br/>
+  <br/>
+<% end %>

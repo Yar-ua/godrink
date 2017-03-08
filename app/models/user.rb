@@ -5,7 +5,8 @@ class User < ApplicationRecord
   	  		:registerable,
          	:recoverable, 
          	:rememberable, 
-         	:validatable
+         	:validatable,
+          :trackable
 
 
   # юзер может создавать много событий
