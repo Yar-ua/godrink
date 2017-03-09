@@ -1,63 +1,71 @@
 <div class="row">
-  <div class="col-md-4" id="avatar_user_show">
-    <%= image_tag user_avatar(@user) %>
-    <br/>
-    <br/>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      Пользователь: <%= @user.name %>
+    </div>
 
-    <%# если это текущий пользователь то ему доступна ссылка "редактировать" %>
-    <% if @user == current_user %>
-      <p class="buffer-top">
-        <%= link_to 'Редактировать профиль', edit_user_path(@user), class: "btn btn-default" %>
-      </p>
-    <% end %>
+    <div class="panel-body">
+      <div class="col-md-4" id="avatar_user_show">
+        <%= image_tag user_avatar(@user) %>
+        <br/>
+        <br/>
 
-  </div>
- 
-  <div class="col-md-8">
-    <h4>
-      Имя: <%= @user.name %><br/>
-      Эл. почта: <%= @user.email %><br>
-      Последний раз логинился: <%= @user.current_sign_in_at %><br/>
-      IP при последнем входе в систему: <%= @user.current_sign_in_ip %><br/>
-      Зарегистрировался: <%= @user.created_at %><br/>
-      Последнее обновление профиля: <%= @user.updated_at %><br/>
-      Создано событий: <%= @user.events.count %><br/>
-      Написано комментариев: <%= @user.comments.count %><br/>
-      Загружено картинок: <%= @user.photos.count %><br/>
-    </h4>
-    <hr/>
-    <ul class="list-group">
-      <h4>5 последних комментариев:</h4>
-      <% if @user.comments.any? %>
-        <% @comment.each do |comment| %>
-          <li class="list-group-item">
-            <%= comment.body %><br/>
-            <small>
-              <%= comment.created_at %>
-              <%= link_to '(Перейти)', event_path(comment.event_id) %>
-            </small>
-          </li>
+        <%# если это текущий пользователь то ему доступна ссылка "редактировать" %>
+        <% if @user == current_user %>
+          <p class="buffer-top">
+            <%= link_to 'Редактировать профиль', edit_user_path(@user), class: "btn btn-default" %>
+          </p>
         <% end %>
-      <% else %>
-        Этот пользователь не оставлял сообщений
-      <% end %>
-    </ul>
-  
-  </div>
-    
-  <%# показываем список событий, организованных данным пользователем %>
 
-  <div class="row">
-  	<div class="col-md-12">
-  	  <% if @user.events.any? %>
-  	    <h3>Организованы следующие события:</h3>
-  	      <div class="row">
-  	      	<%= render partial: 'events/event', collection: @user.events %>
-  	      </div>
-  	  <% else %>
-  	     <p class="buffer-top">Пользователь не организовал ни одного события</p>
-  	  <% end %>
-  	</div>
+      </div>
+   
+      <div class="col-md-8">
+        <h4>
+          Имя: <%= @user.name %><br/>
+          Эл. почта: <%= @user.email %><br>
+          Последний вход в систему: <%= @user.current_sign_in_at %><br/>
+          IP при последнем входе в систему: <%= @user.current_sign_in_ip %><br/>
+          Зарегистрировался: <%= @user.created_at %><br/>
+          Последнее обновление профиля: <%= @user.updated_at %><br/>
+          Создано событий: <%= @user.events.count %><br/>
+          Написано комментариев: <%= @user.comments.count %><br/>
+          Загружено картинок: <%= @user.photos.count %><br/>
+        </h4>
+        <hr/>
+        <ul class="list-group">
+          <h4>5 последних комментариев:</h4>
+          <% if @user.comments.any? %>
+            <% @comment.each do |comment| %>
+              <li class="list-group-item">
+                <%= comment.body %><br/>
+                <small>
+                  <%= comment.created_at %>
+                  <%= link_to '(Перейти)', event_path(comment.event_id) %>
+                </small>
+              </li>
+            <% end %>
+          <% else %>
+            Этот пользователь не оставлял сообщений
+          <% end %>
+        </ul>
+      </div>
+    
+    </div>
   </div>
+      
+    <%# показываем список событий, организованных данным пользователем %>
+
+    <div class="row">
+    	<div class="col-md-12">
+    	  <% if @user.events.any? %>
+    	    <h3>Организованы следующие события:</h3>
+    	      <div class="row">
+    	      	<%= render partial: 'events/event', collection: @user.events %>
+    	      </div>
+    	  <% else %>
+    	     <p class="buffer-top">Пользователь не организовал ни одного события</p>
+    	  <% end %>
+    	</div>
+    </div>
 
 </div>

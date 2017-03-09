@@ -2,3 +2,7 @@
 <hr/>
 
 <%= render partial: 'users/user_index', collection: @users, :as => :user %>
+
+<div class="apple_pagination">
+  <%= will_paginate @users %>
+</div>
