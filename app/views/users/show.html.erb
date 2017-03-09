@@ -1,16 +1,33 @@
-<div class="text-center">
-  <h1><%= @user.name %> </h1>
-  
-  <%= image_tag user_avatar(@user) %>
+<div class="row">
+  <div class="col-md-4" id="avatar_user_show">
+    <%= image_tag user_avatar(@user) %>
+    <br/>
+    <br/>
+
+    <%# если это текущий пользователь то ему доступна ссылка "редактировать" %>
+    <% if @user == current_user %>
+      <p class="buffer-top">
+        <%= link_to 'Редактировать профиль', edit_user_path(@user), class: "btn btn-default" %>
+      </p>
+    <% end %>
+
+  </div>
   <hr/>
 
-  <%# если это текущий пользователь то ему доступна ссылка "редактировать" %>
-  <% if @user == current_user %>
-    <p class="buffer-top">
-      <%= link_to 'Редактировать профиль', edit_user_path(@user), class: "btn btn-default" %>
-    </p>
-  <% end %>
+  <div class="col-md-8">
+    Эл. почта:: <%= @user.email %><br>
+        Последний раз логинился: <%= @user.current_sign_in_at %><br/>
+        IP при последнем входе в систему: <%= @user.current_sign_in_ip %><br/>
+        Зарегистрировался: <%= @user.created_at %><br/>
+        Последнее обновление профиля: <%= @user.updated_at %>
+      </div>
+      <div>
+        Создано тем: <%= @user.events.count %><br/>
+        Написано комментариев: <%= @user.comments.count %><br/>
+        Загружено картинок: <%= @user.photos.count %><br/>
 
+  </div>
+    
   <%# показываем список событий, организованных данным пользователем %>
 
   <div class="row">

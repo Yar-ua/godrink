@@ -18,7 +18,7 @@
         Создано тем: <%= user.events.count %><br/>
         Написано комментариев: <%= user.comments.count %><br/>
         Загружено картинок: <%= user.photos.count %><br/>
-        <small>подробнее см. профиль</small>
+        <small>подробнее <%= link_to 'см. профиль', user_path(user) %></small>
       </div>
     </div>
   </div>
