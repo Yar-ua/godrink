@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   # GET /users/1/
   def show
   	@user = User.find(params[:id])
+    @comment = @user.comments.order(created_at: :desc).limit(5)
   end
 
   # GET /user/1/edit

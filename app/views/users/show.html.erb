@@ -12,20 +12,37 @@
     <% end %>
 
   </div>
-  <hr/>
-
+ 
   <div class="col-md-8">
-    Эл. почта:: <%= @user.email %><br>
-        Последний раз логинился: <%= @user.current_sign_in_at %><br/>
-        IP при последнем входе в систему: <%= @user.current_sign_in_ip %><br/>
-        Зарегистрировался: <%= @user.created_at %><br/>
-        Последнее обновление профиля: <%= @user.updated_at %>
-      </div>
-      <div>
-        Создано тем: <%= @user.events.count %><br/>
-        Написано комментариев: <%= @user.comments.count %><br/>
-        Загружено картинок: <%= @user.photos.count %><br/>
-
+    <h4>
+      Имя: <%= @user.name %><br/>
+      Эл. почта: <%= @user.email %><br>
+      Последний раз логинился: <%= @user.current_sign_in_at %><br/>
+      IP при последнем входе в систему: <%= @user.current_sign_in_ip %><br/>
+      Зарегистрировался: <%= @user.created_at %><br/>
+      Последнее обновление профиля: <%= @user.updated_at %><br/>
+      Создано событий: <%= @user.events.count %><br/>
+      Написано комментариев: <%= @user.comments.count %><br/>
+      Загружено картинок: <%= @user.photos.count %><br/>
+    </h4>
+    <hr/>
+    <ul class="list-group">
+      <h4>5 последних комментариев:</h4>
+      <% if @user.comments.any? %>
+        <% @comment.each do |comment| %>
+          <li class="list-group-item">
+            <%= comment.body %><br/>
+            <small>
+              <%= comment.created_at %>
+              <%= link_to '(Перейти)', event_path(comment.event_id) %>
+            </small>
+          </li>
+        <% end %>
+      <% else %>
+        Этот пользователь не оставлял сообщений
+      <% end %>
+    </ul>
+  
   </div>
     
   <%# показываем список событий, организованных данным пользователем %>

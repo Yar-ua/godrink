@@ -93,8 +93,6 @@ class EventsController < ApplicationController
   # получаем коллекцию камментов для партиала
   def set_comments_event_collection
     @comments_event_collection = @event.comments.except(@new_comment).paginate(page: params[:page], per_page: 5).order('created_at DESC')
-    # @event.comments.except(@new_comment).order('created_at DESC')
-    # .paginate(page: params[:page], per_page: 5)
   end
 
 
