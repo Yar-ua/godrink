@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
+  # для входа админов через гем devise
+  resources :admins
+  
   # для гема devise
   devise_for :users
   resources :users, only: [:index, :show]
  
   root 'events#index'
+  get '/about' => 'static_pages#about'
 
   # фикс для удаления фото: перенаправляем get запрос в метод destroy
   get '/events/:event_id/photos/:id' => 'photos#destroy'
