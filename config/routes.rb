@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  match 'about', to: 'static_pages#about', via: [:get]
-
   # для гема devise
   devise_for :users
   resources :users, only: [:index, :show]
