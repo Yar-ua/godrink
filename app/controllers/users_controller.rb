@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def index
     # @comments_event_collection = @event.comments.paginate(page: params[:page], per_page: 5).order('created_at DESC')
     @events = Event.all
-    @users = User.all.paginate(page: params[:page], per_page: 2)
+    @users = User.all.paginate(page: params[:page], per_page: 5)
   end
 
 
