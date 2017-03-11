@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # для входа админов через гем devise
   devise_for :admins
     resources :events
-  namespace :admins do
+  namespace :admin do
     resources :events
   end
 
