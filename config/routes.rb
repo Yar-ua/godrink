@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'admins/index'
+
   # для входа админов через гем devise
-  resources :admins
-  
+  devise_for :admins
+    resources :events
+  namespace :admins do
+    resources :events
+  end
+
+    
   # для гема devise
   devise_for :users
   resources :users, only: [:index, :show]
