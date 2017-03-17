@@ -27,6 +27,21 @@
           <% if alert != nil %>
             <p class="alert alert-error alert-danger"><%= alert %></p>
           <% end %>
+
+
+<!-- навигация для управления контентом
+          <ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="#">Пользователи</a></li>
+            <li role="presentation"><a href="#">Эвенты</a></li>
+            <li role="presentation"><a href="#">Сообщения</a></li>
+            <li role="presentation"><a href="#">Фото</a></li>
+          </ul>
+
+          -->
+
+          <% if controller == 'admin' %>
+            <h1>abobo</h1>
+          <% end %>
           
           <%= yield %>
 

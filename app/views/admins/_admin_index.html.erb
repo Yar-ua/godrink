@@ -1,0 +1,21 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    Админ: <%= admin.name %>
+  </div>
+  
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-7">
+        Эл. почта:: <%= admin.email %><br>
+        Последний вход в систему: <%= admin.current_sign_in_at %><br/>
+        IP при последнем входе в систему: <%= admin.current_sign_in_ip %><br/>
+        Зарегистрировался: <%= admin.created_at %><br/>
+        Последнее обновление профиля: <%= admin.updated_at %>
+      </div>
+      <div class="col-md-2">
+        удалить
+      </div>
+    </div>
+  </div>
+
+</div>
