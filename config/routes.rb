@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   # для входа админов через гем devise
   devise_for :admins
     
+  # используем ресурс admins для управления профилями самих же админов
+  resources :admins
   # используем пространство имен для админ панели
   namespace :admin do
     resources :events

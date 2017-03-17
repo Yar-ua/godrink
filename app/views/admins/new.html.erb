@@ -1,0 +1,30 @@
+<h2>Создание профиля администратора</h2>
+
+<%= form_for :admin, url: admins_path, method: :post do |f| %>
+  
+  <div class="field">
+    <%= f.label :name, 'имя' %><br/>
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email, 'почта' %><br/>
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, 'пароль' %>
+    <em>6 знаков минимум</em><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, 'подтверждение пароля' %><br/>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Зарегистрироваться" %>
+  </div>
+<% end %>
+

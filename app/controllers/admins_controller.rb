@@ -5,13 +5,15 @@ class AdminsController < ApplicationController
   before_action :authenticate_admin!
   
 
+  # получаем перечень админов
   def index
   	@admins = Admin.all
   end
 
 
+  # создаем админа
   def new
-
+  	@admin = Admin.new
   end
 
 

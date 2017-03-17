@@ -1,5 +1,5 @@
 <h1>Учетные записи администраторов</h1>
-<%= link_to 'Создать учетку админа', new_admin_registration_path, class: 'btn btn-primary' %>
+<%= link_to 'Создать админа', new_admin_path, class: 'btn btn-primary' %>
 <hr/>
 
 <%= render partial: 'admins/admin_index', collection: @admins, as: :admin %>
