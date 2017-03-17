@@ -1,21 +1,25 @@
 Rails.application.routes.draw do
 
-  get 'admins/index'
+  # точка входа в режиме пользователя
+  root 'events#index'
+
+  # точка входа для админки
+  get 'admin' => 'admins#index'
+
+  # рут для страницы инфо
+  get '/about' => 'static_pages#about'
 
   # для входа админов через гем devise
   devise_for :admins
-    resources :events
+    
+  # используем пространство имен для админ панели
   namespace :admin do
     resources :events
   end
-
     
   # для гема devise
   devise_for :users
   resources :users, only: [:index, :show]
- 
-  root 'events#index'
-  get '/about' => 'static_pages#about'
 
   # фикс для удаления фото: перенаправляем get запрос в метод destroy
   get '/events/:event_id/photos/:id' => 'photos#destroy'

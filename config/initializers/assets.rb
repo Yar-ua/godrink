@@ -12,6 +12,7 @@ Rails.application.config.assets.version = '1.0'
 
 
 Rails.application.config.assets.precompile += %w( events.scss )
+Rails.application.config.assets.precompile += %w( admins.scss )
 
 # подключаем lightbox2-rails
 Rails.application.config.assets.precompile += %w( lightbox.js )
