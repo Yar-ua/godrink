@@ -11,9 +11,15 @@ Rails.application.routes.draw do
 
   # для входа админов через гем devise
   devise_for :admins
-    
   # используем ресурс admins для управления профилями самих же админов
-  resources :admins
+  # except: :create фиксим проблемы при создании нового админа
+  # при пост-запросе выбивает ошибку типа "уже выполнен вход в систему"
+  resources :admins, except: :create
+  # определяем post-запрос для создания админа другим админом
+  post 'create_admin' => 'admins#create', as: :create_admin
+
+
+
   # используем пространство имен для админ панели
   namespace :admin do
     resources :events
