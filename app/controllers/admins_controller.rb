@@ -37,15 +37,19 @@ class AdminsController < ApplicationController
   end
 
 
+  # htlfrnbhetv flvbyf
   def edit
-
 
   end
 
 
+  # оновляем админа, переопределив роутинг при обновлении на edit_admin_path(@admin)
   def update
-    @admin.update(admin_edit_params)
-    redirect_to admins_path
+    if @admin.update(admin_edit_params)
+      redirect_to admins_path, notice: 'Профиль админа обновлен!'
+    else
+      redirect_to admins_path, alert: 'профиль админа не обновлен!'
+    end
   end
 
 

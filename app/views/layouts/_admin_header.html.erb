@@ -17,14 +17,17 @@
       <ul class="nav navbar-nav">
         <% if admin_signed_in? %>
           <li><%= link_to 'Вход выполнен как ' + current_admin.name, admin_path %></li>
-          <li><%= link_to 'Управление', admin_path %></li>
+          <li><%= link_to 'Учетки админов', admin_path %></li>
+          <li><%= link_to 'Управление контентом', admin_path %></li>
         <% else %>
           <li><%= link_to 'Войти', new_user_session_path %></li>
         <% end %>
       </ul>
+
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'Выйти', destroy_admin_session_path, :method => :delete %></li>
       </ul>
     </div>
+    
   </div>
 </nav>

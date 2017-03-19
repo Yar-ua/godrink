@@ -13,7 +13,7 @@
         Последнее обновление профиля: <%= admin.updated_at %>
       </div>
       <div class="col-md-2">
-        изменить<%= link_to 'изменить', edit_admin_path(admin) %><br/>
+        <%= link_to 'изменить', edit_admin_path(admin), class: "btn btn-primary btn-xs" %><br/>
         <%#= link_to 'удалить', edit_admin_path(@admin), method: :delete, 
             data: {confirm: 'Уверен что хочешь удалить админа?'} %>
       </div>

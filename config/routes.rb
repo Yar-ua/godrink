@@ -1,25 +1,50 @@
 Rails.application.routes.draw do
-
-  # точка входа в режиме пользователя
-  root 'events#index'
-
+  # =====================================================================
+  # тут определяем точки входа в систему
+  # =====================================================================
+  #
+  # точка входа для неаутентифицированных пользователей
+  # root 'events#index'
+  # unauthenticated - это метод гема devise
+  unauthenticated do
+   root :to => 'events#index'
+  end
+  #
   # точка входа для админки
   get 'admin' => 'admins#index'
-
+  #
   # рут для страницы инфо
   get '/about' => 'static_pages#about'
-
-  # для входа админов через гем devise
+  #
+  # точка входа для аутентифицированных как :admins
+  # authenticated - метод гема devise
+  authenticated do
+    as :admins do
+      root :to => 'admins#index'
+    end
+  end
+  #
+  #
+  # точка входа для аутентифицированных как :user
+  authenticated do 
+    as :user do
+      root :to => 'events#index'
+    end
+  end
+  #
+  # =====================================================================
+  # тут определяем роутинг для :admins
+  # =====================================================================
+  # для входа админов через гем devise как админ
   devise_for :admins
-  # используем ресурс admins для управления профилями самих же админов
-  # except: :create фиксим проблемы при создании нового админа
-  # при пост-запросе выбивает ошибку типа "уже выполнен вход в систему"
-  resources :admins, except: :create #, :update]
+  #
+  resources :admins, except: [:create, :update]
   # определяем post-запрос для создания админа другим админом
   post 'create_admin' => 'admins#create', as: :create_admin
+  # определяем patch-запрос для редактирования админа другим админом
+  # это было необходимо чтобы создать моршрут с :id для редактирования
   patch 'update_admin/:id' => 'admins#update', as: :update_admin
-  # patch 'update_admin' => 'admins#update', as: :update_admin
-  # put '/admins/:id/edit' => 'admins#update'
+
 
 
   # используем пространство имен для админ панели
@@ -27,8 +52,12 @@ Rails.application.routes.draw do
   #  resources :events
   # end
     
+  # =====================================================================
+  # тут определяем роутинг для :users
+  # =====================================================================
   # для гема devise
   devise_for :users
+  
   resources :users, only: [:index, :show]
 
   # фикс для удаления фото: перенаправляем get запрос в метод destroy

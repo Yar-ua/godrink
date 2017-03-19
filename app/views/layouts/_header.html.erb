@@ -22,10 +22,9 @@
             <ul class="dropdown-menu">
               <li><%= link_to 'Мой профиль', current_user %></li>
               <li><%= link_to 'Просмотр всех пользователей', users_path %></li>
-              <li role="separator" class="divider"></li>
-              <li><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></li>
             </ul>
           </li>
+          <li><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></li>
         <% else %>
           <li><%= link_to 'Войти', new_user_session_path %></li>
           <li><%= link_to 'Зарегистрироваться', new_user_registration_path %></li>
