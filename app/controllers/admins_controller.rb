@@ -53,6 +53,12 @@ class AdminsController < ApplicationController
   end
 
 
+  def destroy
+    @admin.destroy
+    redirect_to admins_path, notice: 'Админ был успешно удален.'
+  end
+
+
 
 
   private

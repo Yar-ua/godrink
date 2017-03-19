@@ -42,8 +42,10 @@ Rails.application.routes.draw do
   # определяем post-запрос для создания админа другим админом
   post 'create_admin' => 'admins#create', as: :create_admin
   # определяем patch-запрос для редактирования админа другим админом
-  # это было необходимо чтобы создать моршрут с :id для редактирования
+  # это было необходимо чтобы создать моршрут с :id для редактирования админа
   patch 'update_admin/:id' => 'admins#update', as: :update_admin
+  # это было необходимо чтобы создать моршрут с :id для удаления админа
+  delete 'destroy_admin/:id' => 'admins#destroy', as: :destroy_admin
 
 
 
