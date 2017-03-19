@@ -14,16 +14,18 @@ Rails.application.routes.draw do
   # используем ресурс admins для управления профилями самих же админов
   # except: :create фиксим проблемы при создании нового админа
   # при пост-запросе выбивает ошибку типа "уже выполнен вход в систему"
-  resources :admins, except: :create
+  resources :admins, except: :create #, :update]
   # определяем post-запрос для создания админа другим админом
   post 'create_admin' => 'admins#create', as: :create_admin
-
+  # patch 'update_admin' => 'admins#update', as: :update_admin
+  # patch 'update_admin' => 'admins#update', as: :update_admin
+  # put '/admins/:id/edit' => 'admins#update'
 
 
   # используем пространство имен для админ панели
-  namespace :admin do
-    resources :events
-  end
+  # namespace :admin do
+  #  resources :events
+  # end
     
   # для гема devise
   devise_for :users
