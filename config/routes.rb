@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :admins, except: :create #, :update]
   # определяем post-запрос для создания админа другим админом
   post 'create_admin' => 'admins#create', as: :create_admin
-  # patch 'update_admin' => 'admins#update', as: :update_admin
+  patch 'update_admin/:id' => 'admins#update', as: :update_admin
   # patch 'update_admin' => 'admins#update', as: :update_admin
   # put '/admins/:id/edit' => 'admins#update'
 

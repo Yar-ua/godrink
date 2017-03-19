@@ -4,6 +4,8 @@ class AdminsController < ApplicationController
   
   before_action :authenticate_admin!
   before_action :admin_params, only: [:create]
+  before_action :set_editing_admin, only: [:edit, :update, :destroy]
+  before_action :admin_edit_params, only: :update
 
     
 
@@ -28,10 +30,22 @@ class AdminsController < ApplicationController
     @admin = Admin.new(admin_params)
 
     if @admin.save
-      redirect_to admins_path, notice: 'all ok!'
+      redirect_to admins_path, notice: 'Профиль админа создан!'
     else
-      redirect_to admins_path, alert: 'something wrong!'
+      redirect_to admins_path, alert: 'Ошибка создания профиля админа!'
     end
+  end
+
+
+  def edit
+
+
+  end
+
+
+  def update
+    @admin.update(admin_edit_params)
+    redirect_to admins_path
   end
 
 
@@ -44,8 +58,13 @@ class AdminsController < ApplicationController
     params.require(:admin).permit(:name, :email, :password, :password_confirmation)
   end
 
-  # получаем данные формы админа (без полей пароля и подтверждения)
+  def set_editing_admin
+    @admin = Admin.find(params[:id])
+  end
 
+  def admin_edit_params
+    params.require(:admin).permit(:name, :email)
+  end
 
 
 end
