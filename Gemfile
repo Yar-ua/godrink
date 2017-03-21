@@ -79,10 +79,3 @@ group :production do
   gem 'rails_12factor'
 end
 
-# гем для админки
-gem 'activeadmin', '~> 1.0.0.pre5'
-# gem 'activeadmin'
-# и сопутствующие гемы 
-# gem 'cancan' # or cancancan
-# gem 'draper'
-# gem 'pundit'
