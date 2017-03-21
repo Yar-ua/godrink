@@ -1,8 +1,9 @@
 class AdminsController < ApplicationController
   # назначаем другой слой со стилямиь для панели админа
   layout "admin_application"
-  
+  # перед работой контроллера аутентифицировать админа
   before_action :authenticate_admin!
+  
   before_action :admin_params, only: [:create]
   before_action :set_editing_admin, only: [:edit, :update, :destroy]
   before_action :admin_edit_params, only: :update

@@ -8,7 +8,7 @@ class Event < ApplicationRecord
   has_many :subscriptions, dependent: :destroy
 
   # событие имеет много фоток
-  has_many :photos
+  has_many :photos, dependent: :destroy
 
   # у события много подписчиков (объекты User), 
   # через таблицу subscriptions, по ключу user_id
