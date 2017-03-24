@@ -18,7 +18,7 @@
         <% if admin_signed_in? %>
           <li><%= link_to 'Вход выполнен как ' + current_admin.name, admin_path %></li>
           <li><%= link_to 'Учетки админов', admin_path %></li>
-          <li><%= link_to 'Управление контентом', admin_content_index_path %></li>
+          <li><%= link_to 'Управление эвентами', admin_content_index_path %></li>
         <% else %>
           <li><%= link_to 'Войти', new_user_session_path %></li>
         <% end %>
