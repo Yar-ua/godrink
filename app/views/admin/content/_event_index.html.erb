@@ -1,0 +1,14 @@
+<tr>
+  <td><%= event.title %></td>
+  <td><%= event.address %></td>
+  <td><%= l event.datetime, format: :short %></td>
+  <td><%= event.user.name %></td>
+  <td>
+    <% event.subscriptions.each do |subscription| %>
+      <%= subscription.user.name  %>
+    <% end %>
+  </td>
+  <td>Изменить || Удалить</td>
+</tr>
+
+  

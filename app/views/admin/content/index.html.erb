@@ -1,2 +1,21 @@
 <h1>Admin::Content#index</h1>
 <p>Find me in app/views/admin/content/index.html.erb</p>
+
+<div class="table-responsive">
+  <table class="table">
+    <tr>
+      <td>Эвент</td>
+      <td>Место проведения</td>
+      <td>Время/дата</td>
+      <td>Создал</td>
+      <td>Пойдут</td>
+      <td>Управление</td>
+    </tr>
+    <%#= @events.inspect %>
+    <%= render partial: 'admin/content/event_index', collection: @events, as: :event %>
+    <!-- <tr>
+      <td>@events</td>
+      <td>@events</td>
+    </tr> -->
+  </table>
+</div>
