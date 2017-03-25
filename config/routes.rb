@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  # для входа админов через гем devise как админ
+  devise_for :admins
   # роутинг для гема rails_admin
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # =====================================================================
