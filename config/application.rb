@@ -1,6 +1,7 @@
 require_relative 'boot'
 
 require 'rails/all'
+require 'i18n'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -15,6 +16,8 @@ module Godrink
 
     config.i18n.default_locale = :ru
     config.i18n.locale = :ru
+
+    I18n.default_locale = :ru
 
     # configure time-zone
     config.time_zone = 'Europe/Kiev'
