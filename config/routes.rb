@@ -12,18 +12,18 @@ Rails.application.routes.draw do
   end
   #
   # точка входа для админки
-  get 'admin' => 'admins#index'
+  #+get 'admin' => 'admins#index'
   #
   # рут для страницы инфо
   get '/about' => 'static_pages#about'
   #
   # точка входа для аутентифицированных как :admins
   # authenticated - метод гема devise
-  authenticated do
-    as :admins do
-      root :to => 'admins#index'
-    end
-  end
+  #+ authenticated do
+  #  as :admins do
+  #    root :to => 'admins#index'
+  #  end
+  #+end
   #
   #
   # точка входа для аутентифицированных как :user
@@ -37,24 +37,24 @@ Rails.application.routes.draw do
   # тут определяем роутинг для :admins
   # =====================================================================
   # для входа админов через гем devise как админ
-  devise_for :admins
+  #+devise_for :admins
   #
-  resources :admins, except: [:create, :update]
+  #+resources :admins, except: [:create, :update]
   # определяем post-запрос для создания админа другим админом
-  post 'create_admin' => 'admins#create', as: :create_admin
+  #+post 'create_admin' => 'admins#create', as: :create_admin
   # определяем patch-запрос для редактирования админа другим админом
   # это было необходимо чтобы создать моршрут с :id для редактирования админа
-  patch 'update_admin/:id' => 'admins#update', as: :update_admin
+  #+patch 'update_admin/:id' => 'admins#update', as: :update_admin
   # это было необходимо чтобы создать моршрут с :id для удаления админа
-  delete 'destroy_admin/:id' => 'admins#destroy', as: :destroy_admin
+  #+delete 'destroy_admin/:id' => 'admins#destroy', as: :destroy_admin
 
 
 
   # используем пространство имен для админ панели
-  namespace :admin do
+  #+namespace :admin do
     # создаем контроллер :content для управления всем контентом
-    resources :content
-  end
+  #+  resources :content
+  #+end
     
   # =====================================================================
   # тут определяем роутинг для :users
