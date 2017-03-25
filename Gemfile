@@ -80,4 +80,4 @@ group :production do
 end
 
 # для админки
-# gem 'rails_admin'
+gem 'rails_admin'
