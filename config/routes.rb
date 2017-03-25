@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   #
   # рут для страницы инфо
   get '/about' => 'static_pages#about'
+  # для rails_admin определяем вход через devise
+  #devise_for :admin
   #
   # точка входа для аутентифицированных как :admins
   # authenticated - метод гема devise
@@ -29,11 +31,11 @@ Rails.application.routes.draw do
   #
   #
   # точка входа для аутентифицированных как :user
-  authenticated do 
-    as :user do
-      root :to => 'events#index'
-    end
-  end
+  #+authenticated do 
+  #+  as :user do
+  #+    root :to => 'events#index'
+  #+  end
+  #+end
   #
   # =====================================================================
   # тут определяем роутинг для :admins
