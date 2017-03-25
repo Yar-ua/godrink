@@ -79,3 +79,5 @@ group :production do
   gem 'rails_12factor'
 end
 
+# для админки
+# gem 'rails_admin'
