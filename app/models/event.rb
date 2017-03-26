@@ -32,6 +32,8 @@ class Event < ApplicationRecord
   validates :title, presence: true, length: {maximum: 255}
   # всегда должен быть адрес и время
   validates :address, presence: true
+  # пока закоммментировано datetime т к при создании эвента форма сама подставит текущую дату и время
+  # а для rails_admin надо заставить работать форму даты/времени
   validates :datetime, presence: true
 
 

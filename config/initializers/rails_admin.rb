@@ -12,6 +12,7 @@ RailsAdmin.config do |config|
   config.authenticate_with do
     warden.authenticate! scope: :admin
   end
+
   config.current_user_method(&:current_admin)
 
 
@@ -30,9 +31,9 @@ RailsAdmin.config do |config|
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar true
 
-  config.model Event do
-    list do
-      field :title
+  config.model 'Event' do
+    fields_of_type :datetime do
+      strftime_format "%Y-%m-%d %H:%M:%S"
     end
   end
 
