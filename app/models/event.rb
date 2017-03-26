@@ -1,5 +1,17 @@
 class Event < ApplicationRecord
 
+  # настраиваем сортировку для модели в rails_admin
+  rails_admin do 
+    list do
+      sort_by :created_at
+      field :title
+      field :description
+      field :address
+      field :datetime
+    end
+  end
+
+   
   # событие принадлежит юзеру
   belongs_to :user
 

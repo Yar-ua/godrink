@@ -11,9 +11,9 @@ Rails.application.routes.draw do
   # точка входа для неаутентифицированных пользователей
   # root 'events#index'
   # unauthenticated - это метод гема devise
-  unauthenticated do
+  #+unauthenticated do
    root :to => 'events#index'
-  end
+  #+end
   #
   # точка входа для админки
   #+get 'admin' => 'admins#index'
