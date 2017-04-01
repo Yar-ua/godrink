@@ -17,3 +17,4 @@ Rails.application.config.assets.precompile += %w( admins.scss )
 # подключаем lightbox2-rails
 Rails.application.config.assets.precompile += %w( lightbox.js )
 Rails.application.config.assets.precompile += %w( lightbox.css )
+Rails.application.config.assets.precompile += %w( rails_admin/custom/theming.css )
