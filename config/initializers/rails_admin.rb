@@ -1,5 +1,8 @@
 RailsAdmin.config do |config|
 
+  # число объектов на странице
+  config.default_items_per_page = 25
+
   ### Popular gems integration
 
   ## == Devise ==
@@ -53,7 +56,7 @@ RailsAdmin.config do |config|
     # history_show
     bulk_delete
     # members actions
-    show
+    show 
     edit
     delete
     show_in_app
