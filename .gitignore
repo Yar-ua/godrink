@@ -22,4 +22,4 @@
 
 # Ignore all uploaded files, what was uploaded in development-mode
 # in folder /public/uploads
-/public/uploads/*
+/public/public/*
