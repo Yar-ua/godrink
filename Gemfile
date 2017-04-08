@@ -80,4 +80,8 @@ group :production do
 end
 
 # для админки
-gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+gem 'rails_admin' #, :git => 'git://github.com/sferik/rails_admin.git'
+
+# для входа через ВК
+gem 'omniauth'
+gem 'omniauth-vkontakte'
