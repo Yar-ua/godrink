@@ -1,3 +1,7 @@
+
+
+
+
 var LocsA = [
     {
         lat: 45.9,
@@ -5,7 +9,6 @@ var LocsA = [
         title: 'Title A1',
         html: '<h3>Content A1</h3>',
         icon: 'http://maps.google.com/mapfiles/markerA.png',
-        animation: google.maps.Animation.DROP
     },
     {
         lat: 44.8,
