@@ -15,5 +15,6 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require lightbox
+//= require maplace.min
 //= require_tree .
 

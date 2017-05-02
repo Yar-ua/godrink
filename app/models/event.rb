@@ -26,9 +26,6 @@ class Event < ApplicationRecord
   # через таблицу subscriptions, по ключу user_id
   has_many :subscribers, through: :subscriptions, source: :user
 
-  # эвент имеет много точек на карте
-  has_many :gmap_dots
-
   # проверка, событие создает юзер. юзера не может не быть
   validates :user, presence: true
   # заголовок должен быть, и не длиннее 255 букв

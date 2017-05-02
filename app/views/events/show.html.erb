@@ -100,12 +100,17 @@
       <br/>
 
       <!-- добавляем гугл-карту -->
+      <% aaa = "50.910250,35.805670" %>
+      <% gmap_path = "https://www.google.com/maps/embed/v1/place?key=AIzaSyC5Uk2Oq2-Mzeh7Got8zgn-Qga-Mspcr1g&q=" + aaa.to_s %>
+      
       <div class="map">
         <iframe width="300" height="300" frameborder="0" style="border:0"
-          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC5Uk2Oq2-Mzeh7Got8zgn-Qga-Mspcr1g&q= 50.910250,34.805650"
+          src= <%= gmap_path %>
           allowfullscreen>
         </iframe>
       </div>
+      <%= aaa %>
+      <%= gmap_path %>
 
     </div>
 
