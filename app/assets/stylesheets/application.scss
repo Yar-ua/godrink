@@ -7,7 +7,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-@import "lightbox";
+/* @import "lightbox"; выключен чтобы лайтбокс стартовал только в events/show */
 @import "rails_admin/custom/theming";
 
 

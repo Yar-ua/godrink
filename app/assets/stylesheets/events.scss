@@ -64,3 +64,9 @@
 .event-description-show small {
   color: #e0e0e0;
 }
+
+/* размеры гугл-карты в events/show */
+#gmap-dropdown {
+  width: 100%; 
+  height: 500px;
+}
