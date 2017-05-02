@@ -20,6 +20,9 @@ class User < ApplicationRecord
   # если юзера удалить то фото должно все равно остаться
   has_many :photos
 
+  # имеет много точек на карте (gmap_dots)
+  has_many :gmap_dots
+
   # имя юзера должно быть, и не длиннее 30 букв
   validates :name, presence: true, length: {maximum: 30}
 

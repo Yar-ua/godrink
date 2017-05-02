@@ -22,6 +22,9 @@ class Event < ApplicationRecord
   # событие имеет много фоток
   has_many :photos, dependent: :destroy
 
+  # имеет несколько точек на карте (gmap_dots)
+  has_many :gmap_dots
+
   # у события много подписчиков (объекты User), 
   # через таблицу subscriptions, по ключу user_id
   has_many :subscribers, through: :subscriptions, source: :user
