@@ -100,17 +100,24 @@
       <br/>
 
       <!-- добавляем гугл-карту -->
-      <% aaa = "50.910250,35.805670" %>
-      <% gmap_path = "https://www.google.com/maps/embed/v1/place?key=AIzaSyC5Uk2Oq2-Mzeh7Got8zgn-Qga-Mspcr1g&q=" + aaa.to_s %>
-      
-      <div class="map">
+      <%# aaa = "50.910250,35.805670" %>
+      <%# gmap_path = "https://www.google.com/maps/embed/v1/place?key=AIzaSyC5Uk2Oq2-Mzeh7Got8zgn-Qga-Mspcr1g&q=" + aaa.to_s %>
+
+      <!-- <div class="map">
         <iframe width="300" height="300" frameborder="0" style="border:0"
-          src= <%= gmap_path %>
+          src= <%#= gmap_path %>
           allowfullscreen>
         </iframe>
+      </div>  -->
+      <%#= aaa %>
+      <%#= gmap_path %>
+
+      <div>
+
+        <!-- добавляем гугл карту -->
+        <div id="gmap" style="with:300px; height:250px;"></div>
+
       </div>
-      <%= aaa %>
-      <%= gmap_path %>
 
     </div>
 
@@ -128,6 +135,7 @@
 <!-- подключение lightbox2-rails -->
 <%= javascript_include_tag 'lightbox' %>
 <%= stylesheet_link_tag 'lightbox', :media => "all" %>
+<%= javascript_include_tag 'gmap' %>
 
 
  
@@ -143,10 +151,18 @@
   });
 
 
-  /* настройки lightbox */
-  /*  lightbox.option({
-      'resizeDuration': 200,
-      'wrapAround': true
-    })
+/*
+  $(function() {
+    new Maplace({
+        show_markers: false,
+        locations: [{
+            lat: 45.9,
+            lon: 10.9,
+            zoom: 8
+        }]
+    }).Load();
+  });
+
 */
+
 </script>
