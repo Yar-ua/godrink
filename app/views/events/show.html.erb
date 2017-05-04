@@ -42,12 +42,24 @@
     <div class="col-md-8">
 
       <!-- добавляем гугл карту -->
-      <div>
-        <div id="gmap-dropdown"></div>
-        <div id="gmap-list"></div>
-        <!-- кнопка для увеличения/уменьшения карты, связана со скриптом ниже -->
-        <!-- <button type="button" class="btn btn-default btn-xs" id="gmap-button">больше</ -->button>
+      <div class="row">
+        
+          <div id="gmap-dropdown"></div>
+          <div id="gmap-list"></div>
+          <!-- кнопка для увеличения/уменьшения карты, связана со скриптом ниже -->
+          <!-- <button type="button" class="btn btn-default btn-xs" id="gmap-button">больше</ -->
+
       </div>
+
+              <div>
+          <% if current_user %>
+            <%= link_to "Создать точку на карте", "#", class: 'event-gmap-dot-form-link' %>
+            <div class='event-gmap-dot-form'>
+              <%= render partial: 'gmaps/form_gmap', locals: {gmap_dot: @event.gmap_dots.build} %>
+            </div>
+          <% end %>
+
+        </div>
 
       <br/>
 
@@ -78,6 +90,7 @@
       </div>
 
     </div>
+
 
     <div class="col-md-4">
       <div class="event-owner">
@@ -128,7 +141,7 @@
 
 <!-- подключение яваскрипта отображения координат и карты -->
 <%= render 'gmaps/event_gmap' %>
-<%#= javascript_include_tag 'gmap' %>
+
 
 
 
@@ -146,16 +159,16 @@
     });
   });
 
+  
+  /* показать/скрыть форму создания точки на карте */
 
-  /* функция для увеличения/уменьшения карты */
-
-/*
   $(function(){
-    $('#gmap-button').click(function(){
-      $('#gmap').css({"width":"100%", "height":"500px"});
-      $('#gmap-button').text('меньше');
+    $('.event-gmap-dot-form').hide();
+
+    $('.event-gmap-dot-form-link').click(function(){
+      $('.event-gmap-dot-form').slideToggle(300);
+      return false;
     });
   });
-*/
 
 </script>

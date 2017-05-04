@@ -54,8 +54,7 @@ ActiveRecord::Schema.define(version: 20170502204614) do
   end
 
   create_table "gmap_dots", force: :cascade do |t|
-    t.text     "lat"
-    t.text     "lon"
+    t.text     "coords"
     t.text     "title"
     t.text     "html"
     t.integer  "user_id"

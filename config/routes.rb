@@ -83,6 +83,8 @@ Rails.application.routes.draw do
     resources :subscriptions, only: [:create, :destroy]
     # вложенный ресурс photos
     resources :photos, only: [:create, :destroy]
+    # вложенный ресурс гугл-точек на карте
+    resources :gmap_dots, only: [:create, :destroy]
 
     post :show, on: :member
 

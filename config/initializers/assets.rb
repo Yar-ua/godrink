@@ -14,6 +14,7 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( events.scss )
 Rails.application.config.assets.precompile += %w( comments.scss )
 Rails.application.config.assets.precompile += %w( admins.scss )
+Rails.application.config.assets.precompile += %w( gmap_dots.scss )
 
 # подключаем lightbox2-rails
 Rails.application.config.assets.precompile += %w( lightbox.js )

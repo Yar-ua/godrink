@@ -1,0 +1,13 @@
+// Place all the styles related to the gmap_dots controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#gmap_dot_coords.form-control, #gmap_dot_title.form-control {
+  width: 30%;
+  height: 30px;
+}
+
+#gmap_dot_html.form-control {
+  width: 70%;
+  height: 60px;	
+}

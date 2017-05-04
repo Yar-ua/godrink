@@ -1,0 +1,2 @@
+module GmapDotsHelper
+end
