@@ -22,5 +22,3 @@ Rails.application.config.assets.precompile += %w( lightbox.css )
 # темы для rails_admin
 Rails.application.config.assets.precompile += %w( rails_admin/custom/theming.css )
 
-# подключаем gmap.js - свой скрипт для карт
-Rails.application.config.assets.precompile += %w( gmap.js )

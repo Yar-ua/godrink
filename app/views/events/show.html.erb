@@ -125,7 +125,11 @@
 <!-- подключение lightbox2-rails -->
 <%= javascript_include_tag 'lightbox' %>
 <%= stylesheet_link_tag 'lightbox', :media => "all" %>
-<%= javascript_include_tag 'gmap' %>
+
+<!-- подключение яваскрипта отображения координат и карты -->
+<%= render 'gmaps/event_gmap' %>
+<%#= javascript_include_tag 'gmap' %>
+
 
 
  
