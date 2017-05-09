@@ -47,6 +47,10 @@ class EventsController < ApplicationController
   # Заготовки для загрузки фото
   @new_photo = @event.photos.build(params[:photo])
 
+  @gmap_show = GmapDot.last
+
+  
+
   end
 
 

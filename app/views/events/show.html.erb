@@ -77,6 +77,11 @@
         </div>
       </div>
 
+      
+      <%= @gmap_show.get_lat(@gmap_show.coords) %> ||| <%= @gmap_show.get_lon(@gmap_show.coords) %>
+
+
+
       <%# Рисуем форму для добавления новой фотографии (которая будет скрыта с помощью js) %>
       <div class="event-comments buffer-top">
         <% if current_user %>
