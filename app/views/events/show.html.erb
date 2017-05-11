@@ -139,6 +139,10 @@
 <%= javascript_include_tag 'lightbox' %>
 <%= stylesheet_link_tag 'lightbox', :media => "all" %>
 
+<!-- подключение хелперы для получения JSON строки с координатами для ЯС куска кода карты-->
+<!-- в хелпер передаем коллекцию (массив) @event.gmap_dots-->
+<%= gmap_dots_to_json(@event.gmap_dots) %>
+
 <!-- подключение яваскрипта отображения координат и карты -->
 <%= render 'gmaps/event_gmap' %>
 

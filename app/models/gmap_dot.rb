@@ -6,6 +6,7 @@ class GmapDot < ApplicationRecord
   validates :event, presence: true
   validates :user, presence: true
 
+  validates :coords, :lat, :lon, presence: true
 
   # добавляем методы объектов - получение широты из параметра класса :coords
   def get_lat(value)

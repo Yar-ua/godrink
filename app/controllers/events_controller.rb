@@ -47,11 +47,6 @@ class EventsController < ApplicationController
   # Заготовки для загрузки фото
   # @new_photo = @event.photos.build(params[:photo])
 
-  # Заготовка для получения значений жпс-точки из формы
-  @temp_gmap_dot = []
-
-  
-
   end
 
 

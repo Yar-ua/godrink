@@ -1,5 +1,5 @@
 <script>
-
+/*
     var LocsA = [
         {
             lat: 45.9,
@@ -27,9 +27,10 @@
             zoom: 8,
             icon: 'http://maps.google.com/mapfiles/marker.png'
         }
-    ];
+    ];  */
+/* LocsA - это массив, надо передать сбюда весь ДЖСОН как массив */
 
-
+    var LocsA = <%= @json %> ;
 
     //dropdown example
     new Maplace({
