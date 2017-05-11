@@ -51,15 +51,14 @@
 
       </div>
 
-              <div>
-          <% if current_user %>
-            <%= link_to "Создать точку на карте", "#", class: 'event-gmap-dot-form-link' %>
-            <div class='event-gmap-dot-form'>
-              <%= render partial: 'gmaps/form_gmap', locals: {gmap_dot: @event.gmap_dots.build} %>
-            </div>
-          <% end %>
-
-        </div>
+      <div>
+        <% if current_user %>
+          <%= link_to "Создать точку на карте", "#", class: 'event-gmap-dot-form-link' %>
+          <div class='event-gmap-dot-form'>
+            <%= render partial: 'gmaps/form_gmap', locals: {gmap_dot: @event.gmap_dots.build} %>
+          </div>
+        <% end %>
+      </div>
 
       <br/>
 
@@ -78,10 +77,6 @@
       </div>
 
       
-      <%= @gmap_show.get_lat(@gmap_show.coords) %> ||| <%= @gmap_show.get_lon(@gmap_show.coords) %>
-
-
-
       <%# Рисуем форму для добавления новой фотографии (которая будет скрыта с помощью js) %>
       <div class="event-comments buffer-top">
         <% if current_user %>

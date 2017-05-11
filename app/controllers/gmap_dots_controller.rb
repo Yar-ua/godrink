@@ -4,6 +4,11 @@ class GmapDotsController < ApplicationController
 
   def create
   	@new_gmap_dot = @event.gmap_dots.build(gmap_dot_params)
+  	# с помощью введенных в модели методов поучаем раздельные координаты широты и долготы
+  	# это потребуется для последующей генерации JSONа для гугл карты на яваскрипте
+  	@new_gmap_dot.lat = @new_gmap_dot.get_lat(@new_gmap_dot.coords)
+  	@new_gmap_dot.lon = @new_gmap_dot.get_lon(@new_gmap_dot.coords)
+  	
   	@new_gmap_dot.user = current_user
   	if @new_gmap_dot.save
   	  redirect_to @event, notice: 'Точка добавлена'
