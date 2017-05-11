@@ -6,18 +6,20 @@ class GmapDot < ApplicationRecord
   validates :event, presence: true
   validates :user, presence: true
 
-  validates :coords, :lat, :lon, presence: true
+  validates :lat, :lon, presence: true
 
-  # добавляем методы объектов - получение широты из параметра класса :coords
-  def get_lat(value)
-  	mass_coord = value.split(',')
-  	@lat = mass_coord[0]
+
+  # описываем метод формы, в форме поле ввода координат называется :coords
+  def coords
+  	# получаем координаты из формы одной строкой'#{lan}, #{lon}'
   end
 
-  # добавляем методы объектов - получение долготы из параметра класса :coords
-  def get_lon(value)
-  	mass_coord = value.split(',')
-  	@lat = mass_coord[1]
+  # тут мы получаем из строки координат отдельно значения широты и долготы, 
+  # для  последующей записи в БД
+  def coords=value
+  	ar = value.split(',')
+  	self.lat = ar[0]
+  	self.lon = ar[1]
   end
 
 

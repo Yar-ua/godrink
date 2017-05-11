@@ -73,7 +73,6 @@ class EventsController < ApplicationController
   end
 
 
-
   protected
 
   def event_params
