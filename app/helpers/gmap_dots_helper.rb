@@ -1,22 +1,17 @@
 module GmapDotsHelper
   
-  #def gmap_dots_to_json (array_hash)
-  #	@a = []
-  #	array_hash.each do |hash|
-  #	  @a << hash
-  #	end
-  #	return @a
-  #end
+  def cut_nil_gmap_dots(value)
+    # обрезаем массив коллекции @event.gmap_dots, содержащий пустые объекты в конце (если они есть)
+    @array_dots_for_js = []
 
-  def gmap_dots_to_json (array_hash)
-  	@json = []
-  	array_hash.each do |hash|
-  	  @json << { lat: hash.lat, lon: hash.lon, title: hash.title, html: hash.html, 
-  	  			icon: 'http://maps.google.com/mapfiles/marker.png' }.to_json
-  	end
-
-  	# 'values: <%= JSON.parse(@json_stata_l_na_100_km) %>'
-  	return @json
+    value.each do |a|
+   
+      if a.id != nil
+        @array_dots_for_js << a
+      end
+    end
+   
+    return @array_dots_for_js
   end
 
 end

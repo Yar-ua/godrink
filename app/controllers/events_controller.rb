@@ -46,6 +46,7 @@ class EventsController < ApplicationController
 
   # Заготовки для загрузки фото
   # @new_photo = @event.photos.build(params[:photo])
+  @dots_for_js = @event.gmap_dots
 
   end
 
