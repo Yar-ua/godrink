@@ -39,13 +39,17 @@ class EventsController < ApplicationController
 
   def show
   # заготовка модели для добавления формы комментария
-  # @new_comment = @event.comments.build(params[:comment])
+  @new_comment = @event.comments.build(params[:comment])
 
   # Заготовка модели для формы подписки
-  # @new_subscription = @event.subscriptions.build(params[:subscription])
+  @new_subscription = @event.subscriptions.build(params[:subscription])
 
   # Заготовки для загрузки фото
-  # @new_photo = @event.photos.build(params[:photo])
+  @new_photo = @event.photos.build(params[:photo])
+
+  # Заготовки для получения новой точки гугл-карты
+  @new_gmap_dot = @event.gmap_dots.build(params[:gmap_dot])
+
   @dots_for_js = @event.gmap_dots
 
   end

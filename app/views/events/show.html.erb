@@ -43,12 +43,7 @@
 
       <!-- добавляем гугл карту -->
       <div class="row">
-        
-          <div id="gmap-dropdown"></div>
-          <div id="gmap-list"></div>
-          <!-- кнопка для увеличения/уменьшения карты, связана со скриптом ниже -->
-          <!-- <button type="button" class="btn btn-default btn-xs" id="gmap-button">больше</ -->
-
+        <div id="map"></div>
       </div>
 
       <div>
@@ -139,19 +134,8 @@
 <%= javascript_include_tag 'lightbox' %>
 <%= stylesheet_link_tag 'lightbox', :media => "all" %>
 
-<!-- подключение хелперы для получения JSON строки с координатами для ЯС куска кода карты-->
-<!-- в хелпер передаем коллекцию (массив) @event.gmap_dots-->
------<%= cut_nil_gmap_dots(@dots_for_js) %> -------<hr/>
-<%= @array_dots_for_js[0].lat %>
-
-<!-- подключение яваскрипта отображения координат и карты -->
-<%= render 'gmaps/event_gmap' %>
-
-
-
  
 <script>
-
 
   /* показываем/скрываем форму загрузки для фотографий */
   $(function(){

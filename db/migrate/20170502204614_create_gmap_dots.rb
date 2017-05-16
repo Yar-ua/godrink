@@ -1,8 +1,8 @@
 class CreateGmapDots < ActiveRecord::Migration[5.0]
   def change
     create_table :gmap_dots do |t|
-      t.text		:lat	  # широта lat
-      t.text    :lon    # долгота lon
+      t.float		:lat	  # широта lat
+      t.float    :lon    # долгота lon
       t.text		:title  # заглавие для меню
       t.text		:html	  # описание метки
 
